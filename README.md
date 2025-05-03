@@ -34,18 +34,3 @@ This project demonstrates SQL skills applied to an eCommerce relational database
 
 ✅ Index Optimization:
 - Created indexes on `Orders.CustomerID` and `OrderDetails.ProductID` for faster query performance
-
-## 🔍 Example Queries
-
-```sql
--- Top 10 most expensive products
-SELECT ProductID, ProductName, Price
-FROM Products
-ORDER BY Price DESC
-LIMIT 10;
-
--- Total revenue generated per product
-SELECT p.ProductID, p.ProductName, SUM(od.Quantity * od.UnitPrice) AS TotalRevenue
-FROM OrderDetails od
-JOIN Products p ON od.ProductID = p.ProductID
-GROUP BY p.ProductID, p.ProductName;
